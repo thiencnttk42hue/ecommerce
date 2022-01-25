@@ -144,4 +144,5 @@
         </tbody>
     </table>
 </div>
+{{ $customers->links() }}
 @endsection
