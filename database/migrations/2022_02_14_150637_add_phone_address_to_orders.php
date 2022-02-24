@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPhoneAdressToOrderTable extends Migration
+class AddPhoneAddressToOrders extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddPhoneAdressToOrderTable extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->string('phone', 10);
-            $table->string('address', 100);
+            $table->string('phone',15);
+            $table->string('address',100);
         });
     }
 

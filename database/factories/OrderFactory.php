@@ -17,10 +17,10 @@ class OrderFactory extends Factory
         return [
             'name'=>$this->faker->company(),
             'desc'=>$this->faker->catchPhrase(),
-            'phone'=>$this->faker->tollFreePhoneNumber(),
-            'address'=>$this->faker->company(),
             'status'=>1,
             'customer_id'=>1,
+            'phone'=>$this->faker->e164PhoneNumber(),
+            'address'=>$this->faker->streetName(),
         ];
     }
 }

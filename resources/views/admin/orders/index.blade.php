@@ -50,12 +50,7 @@
                 @endif
                 <button type="submit">Cập nhật</button>
               </form>
-
-<<<<<<< HEAD
               <form action="{{ route('admin.orders.destroy', $order->id) }}" method="post" onsubmit="return confirm('Bạn có chắc muốn xoá hóa đơn')">
-=======
-              <form action="{{ route( 'admin.orders.destroy', $order->id ) }}" method="post">
->>>>>>> 976302e (create product_web_ui)
                   {{ csrf_field() }}
                   {{ method_field('delete') }}
                   <button type="submit"> Xóa</button>

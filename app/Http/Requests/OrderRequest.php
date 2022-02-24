@@ -26,7 +26,7 @@ class OrderRequest extends FormRequest
         return [
             'txtname' => 'required|min: 5|max: 25',
             'txtnote' => 'max: 255',
-            'txtphone' => 'required|min: 10|max: 11',
+            'txtphone' => 'required|numeric|digits_between:10, 11',
             'txtaddress' => 'required|max: 100'
         ];
     }
@@ -38,8 +38,8 @@ class OrderRequest extends FormRequest
             'txtname.max' => 'Tên tối đa 25 chữ cái',
             'txtnote' => 'Ghi chú không được quá 255 kí tự',
             'txtphone.required' => 'Số điện thoại không được để trống!',
-            'txtphone.min' => 'Số điện thoại ít nhât 10 chữ số',
-            'txtphone.max' => 'Số điện thoại nhiều nhất 11 chữ số',
+            'txtphone.numeric' => 'Số điện thoại chỉ chứa kí tự số',
+            'txtphone.digits_between' => 'Số điện thoại có 10 hoặc 11 chữ số',
             'txtaddress.required' => 'Vui lòng nhập địa chỉ!',
             'txtaddress.min' => 'Địa chỉ tối đa 100 kí tự'
         ];

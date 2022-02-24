@@ -1,11 +1,8 @@
 <nav class="amado-nav">
     <ul>
-        <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="shop.php">Shop</a></li>
-        <li><a href="">Product</a></li>
-        <li class="active"><a href="index.php">Home</a></li>
+        <li class="active"><a href="{{ route('home') }}">Home</a></li>
         <li><a href="{{ route('shop') }}">Shop</a></li>
-        <li><a href="product-details.php">Product</a></li>
+        <li><a href="#">Product</a></li>
         <li><a href="{{ route('cart') }}">Cart</a></li>
         <li><a href="{{ route('orders.index') }}">Checkout</a></li>
     </ul>
