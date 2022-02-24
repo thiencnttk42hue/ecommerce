@@ -33,20 +33,35 @@
                                             </td>
                                             <td class="price">
                                                 <span>{{ $orderDetail['price'] }}</span>
-                                            </td>
+                                            </td>                                
                                             <td class="qty">
                                                 <div class="qty-btn d-flex">
-                                                    <p>{{ $orderDetail['price'] * $orderDetail['quantity'] }}</p>
+                                                    <p>{{ $orderDetail['price'] * $orderDetail['quantity'] }}<p>                                                 
                                                     <div class="quantity">
-                                                        <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
-                                                        <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                        <form method="POST" action="{{ route('product.update.order')}}" >
+                                                        <button type="submit"class="qty-minus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                                        <input type="hidden" name="id" value="{{ $orderDetail['id'] }}">
+                                                        <input type="hidden" name="name" value="{{ $orderDetail['name'] }}">
+                                                        <input type="hidden" name="price" value="{{ $orderDetail['price'] }}">
+                                                        <input type="hidden" name="quantity" value="-1">
+                                                        </form>
+                                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="{{ $orderDetail['quantity'] }}">
+                                                        <form method="POST" action="{{ route('product.update.order')}}" >
+                                                        <button type="submit"class="qty-plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                                        <input type="hidden" name="id" value="{{ $orderDetail['id'] }}">
+                                                        <input type="hidden" name="name" value="{{ $orderDetail['name'] }}">
+                                                        <input type="hidden" name="price" value="{{ $orderDetail['price'] }}">
+                                                        <input type="hidden" name="quantity" value="1">
+                                                        </form>                                   
                                                     </div>
+                                                    
                                                 </div>
                                             </td>
                                             <td class="actions" >
                                                 <button class="btn btn-info btn-sm update-cart" data-id=""><i class="fa fa-refresh"></i></button>
-                                                <button class="btn btn-danger btn-sm remove-from-cart" data-id=""><i class="fa fa-trash-o"></i></button>
+                                                <form method="POST" action="{{ route('product.delete.order')}}" >
+                                                <button type="submit" class="btn btn-danger btn-sm remove-from-cart" data-id=""><i class="fa fa-trash-o"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                         @endforeach

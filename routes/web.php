@@ -70,3 +70,7 @@ Route::get('cart', [CartController::class, 'index'])->name('cart');
 
 Route::post('order', [WebOrderController::class, 'order'])->name('product.order');
 
+Route::post('update-order', [WebOrderController::class, 'updateOrder'])->name('product.update.order');
+
+Route::post('delete-order', [WebOrderController::class, 'deleteOrder'])->name('product.delete.order');
+

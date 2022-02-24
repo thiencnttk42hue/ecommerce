@@ -12,6 +12,10 @@ class CartController extends Controller
         if(!isset($cart)) $cart = array();
         return view('web.cart', array('cart' => $cart));
     } 
+    public function delete($id, Request $request)
+    {
+        
+    }
 
 }
 
