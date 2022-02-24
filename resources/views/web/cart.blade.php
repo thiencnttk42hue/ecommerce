@@ -39,20 +39,20 @@
                                                     <p>{{ $orderDetail['price'] * $orderDetail['quantity'] }}<p>                                                 
                                                     <div class="quantity">
                                                         <form method="POST" action="{{ route('product.update.order')}}" >
-                                                        <button type="submit"class="qty-minus"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                                                        <input type="hidden" name="id" value="{{ $orderDetail['id'] }}">
-                                                        <input type="hidden" name="name" value="{{ $orderDetail['name'] }}">
-                                                        <input type="hidden" name="price" value="{{ $orderDetail['price'] }}">
-                                                        <input type="hidden" name="quantity" value="-1">
+                                                            <button type="submit"class="qty-minus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                                            <input type="hidden" name="id" value="{{ $orderDetail['id'] }}">
+                                                            <input type="hidden" name="name" value="{{ $orderDetail['name'] }}">
+                                                            <input type="hidden" name="price" value="{{ $orderDetail['price'] }}">
+                                                            <input type="hidden" name="quantity" value="-1">
                                                         </form>
                                                         <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="{{ $orderDetail['quantity'] }}">
                                                         <form method="POST" action="{{ route('product.update.order')}}" >
-                                                        <button type="submit"class="qty-plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                                                        <input type="hidden" name="id" value="{{ $orderDetail['id'] }}">
-                                                        <input type="hidden" name="name" value="{{ $orderDetail['name'] }}">
-                                                        <input type="hidden" name="price" value="{{ $orderDetail['price'] }}">
-                                                        <input type="hidden" name="quantity" value="1">
-                                                        </form>                                   
+                                                            <button type="submit"class="qty-plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                                            <input type="hidden" name="id" value="{{ $orderDetail['id'] }}">
+                                                            <input type="hidden" name="name" value="{{ $orderDetail['name'] }}">
+                                                            <input type="hidden" name="price" value="{{ $orderDetail['price'] }}">
+                                                            <input type="hidden" name="quantity" value="1">
+                                                        </form> 
                                                     </div>
                                                     
                                                 </div>
@@ -79,7 +79,7 @@
                                     <li><span>total:</span> <span></span></li>
                                 </ul>
                                 <div class="cart-btn mt-100">
-                                    <a href="cart.php" class="btn amado-btn w-100">Checkout</a>
+                                    <a href="{{ route('orders.index') }}" class="btn amado-btn w-100">Checkout</a>
                                 </div>
                                 
                             </div>
@@ -92,7 +92,6 @@
     </body>
 @endsection
 @section('scripts')
-
 
     <script type="text/javascript">
 

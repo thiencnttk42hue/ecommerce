@@ -37,7 +37,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.orders.index') }}">
         <i class="menu-icon typcn typcn-bell"></i>
-        <span class="menu-title">Order</span>
+        <span class="menu-title">{{ trans('admin.order.title') }}</span>
         </a>
     </li>
     <li class="nav-item">
