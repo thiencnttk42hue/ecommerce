@@ -25,5 +25,33 @@ class OrderController extends Controller
         $cart[$request->id] = $orderDetail;
         session()->put('cart', $cart);
         return redirect()->route('cart')->with('message', 'Đã thêm giỏ hàng thành công');
+        
     }
+    public function updateOrder(Request $request)
+    {
+        $cart = session()->get('cart');
+        if(!isset($cart)) $cart = array();
+        foreach($cart as $key => $value) {
+            if($value['id'] == $request->id){
+                $cart[$key]['quantity'] += $request->quantity ;
+            }
+        }
+        session()->put('cart', $cart);
+        return redirect()->route('cart')->with('message', 'Đã thêm giỏ hàng thành công');
+        
+    }
+    public function deleteOrder(Request $request)
+    {
+        $cart = session()->get('cart');
+        if(!isset($cart)) $cart = array();
+        foreach($cart as $key => $value) {
+            if($value['id'] == $request->id){
+                unset($cart[$key]);
+            }
+        }
+        session()->put('cart', $cart);
+        return redirect()->route('cart')->with('message', 'Đã thêm giỏ hàng thành công');
+        
+    }
+   
 }
