@@ -15,35 +15,35 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        .content-amado{
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8be8cf), color-stop(100%,#cdeb8b)) !important;
-        }
-        .navbar-amado{
-            background-color: #000 !important;
-        }
-        .navbar-li-amado {
-            font-size: 20px !important;
-            color: #fff !important;
-            font-weight: bold !important;
-        }
-        .header-name{
-            font-size: 20px !important;
-            color: #fff !important;
-            background-color: #526270 !important;
-        }
-        .btn-login{
-            width: 150px !important;
-        }
-        .btn-register{
-            width: 100% !important;
-        }
-    </style>
+<style>
+    .content-amado{
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8be8cf), color-stop(100%,#cdeb8b)) !important;
+    }
+    .navbar-amado{
+        background-color: #000 !important;
+    }
+    .navbar-li-amado {
+        font-size: 20px !important;
+        color: #fff !important;
+        font-weight: bold !important;
+    }
+    .header-name{
+        font-size: 20px !important;
+        color: #fff !important;
+        background-color: #526270 !important;
+    }
+    .btn-login{
+        width: 150px !important;
+    }
+    .btn-register{
+        width: 100% !important;
+    }
+</style>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styleapp.css">
 </head>
 <body>
     <div id="app">

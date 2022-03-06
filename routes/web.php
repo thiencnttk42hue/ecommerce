@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OrderDetailController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\OrderController as WebOrderController;
 use App\Http\Controllers\LoginController as WebLoginController;
 use App\Http\Controllers\ProductController as WebProductController;
@@ -22,13 +23,15 @@ use App\Http\Controllers\ProductController as WebProductController;
  */
 
 Route::prefix('admin')->name('admin.')->group(function(){
-     Route::resource('orders', OrderController::class);
-     Route::resource('brands', BrandController::class);
-     Route::resource('products', ProductController::class);
-     Route::resource('customers', CustomerController::class);
-     Route::resource('categories', CategoryController::class);
-     Route::resource('orderdetails', OrderDetailController::class);
- });
+    Route::resource('orders', OrderController::class);
+    Route::resource('brands', BrandController::class);
+    Route::resource('medias', MediaController::class);
+    Route::resource('products', ProductController::class);
+    Route::resource('customers', CustomerController::class);
+    Route::resource('categories', CategoryController::class);
+    Route::resource('orderdetails', OrderDetailController::class);
+});
+
 
 /**
  * Phần

@@ -7,7 +7,7 @@
       padding-top: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
       border-radius: 4px;
-    } 
+    }
     .card{
         display: flex;
         min-height:800px !important;
@@ -19,6 +19,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('admin/css/shared/style.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/demo_1/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/demo_1/styleapp.css') }}">
     <style>
         .card{
             display: flex;

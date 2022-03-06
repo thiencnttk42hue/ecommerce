@@ -41,7 +41,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('admin.medias.index') }}">
         <i class="menu-icon typcn typcn-document-add"></i>
         <span class="menu-title">Medias</span>
         </a>

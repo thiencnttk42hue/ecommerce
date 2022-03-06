@@ -22,8 +22,8 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>    
-                                        @foreach($cart as $orderDetail)              
+                                    <tbody>
+                                        @foreach($cart as $orderDetail)
                                         <tr>
                                             <td class="cart_product_img">
                                                 <a href="#"><img src="./assets/img/bg-img/cart1.jpg" alt="Product"></a>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="col-12 col-lg-4">
                             <div class="cart-summary">
-                                
+
                                 <h5>Cart Total</h5>
                                 <ul class="summary-table">
                                     <li><span>subtotal:</span> <span>$140.00</span></li>
@@ -81,7 +81,7 @@
                                 <div class="cart-btn mt-100">
                                     <a href="{{ route('orders.index') }}" class="btn amado-btn w-100">Checkout</a>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Http\Resources\ProductCollection;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
@@ -11,7 +12,7 @@ use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Str;
 class ProductController extends Controller
 {
     /**
@@ -21,8 +22,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('brand', 'category')->get();
-        return view('admin.products.index', array('products' => $products));
+        // return ProductCollection::make(Product::all());
+        $data['products'] = Product::with('brand', 'category')->paginate(10);
+        return view('admin.products.index', $data);
     }
 
     /**
@@ -45,7 +47,12 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        Product::create($request->all());
+        $data = array_merge(
+            $request->only(['name', 'price', 'brand_id', 'category_id']),
+            ['slug' => Str::slug($request->name)]
+        );
+        // dd($data);
+        Product::create($data);
         return redirect()->route('admin.products.index')->with('message', trans('admin.product.add.success'));
     }
 

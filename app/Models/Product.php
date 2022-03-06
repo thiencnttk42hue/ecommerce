@@ -8,8 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['name', 'price', 'discount', 'brand_id', 'category_id'];
+    protected static function booted()
+    {
+        static::created(function($product){
+           $product->slug = $product->slug . '-' .  $product->id;
+           $product->save();
+        });
+    }
+    protected $fillable = ['name', 'price', 'discount', 'brand_id', 'category_id', 'slug'];
 
     public function brand(){
         return $this->belongsTo(\App\Models\Brand::class, 'brand_id');

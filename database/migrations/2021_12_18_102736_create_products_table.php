@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name', 100);
             $table->decimal('price', $precision = 15, $scale = 4);
-            $table->integer('view');
-            $table->integer('discount');
+            $table->integer('view')->default(0);
+            $table->integer('discount')->default(0);
             $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->unsignedBigInteger('category_id');

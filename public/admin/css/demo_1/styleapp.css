@@ -1,0 +1,75 @@
+.form-delete {
+    margin: 0;
+}
+
+.table-border {
+    border: 2px solid black;
+}
+
+.table-bordered-css {
+    border: 2px solid black;
+}
+
+.navigation-page {
+    margin-top: 10px;
+}
+
+.pagination {
+    justify-content: center !important;
+}
+
+.help-block {
+    color: red;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.has-error input {
+    border-color: red !important;
+}
+
+.form-create-app {
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+}
+
+.product-content {
+    font-size: 20px !important;
+    margin-left: 20px;
+}
+
+.product-h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 100px;
+}
+
+.product-add-ip {
+    margin-left: 30px;
+    display: block;
+    height: 40px;
+    width: 96%;
+    border-radius: 20px;
+    padding-left: 10px;
+    border: 2px solid #ccc;
+}
+
+.product-btn {
+    text-align: center;
+}
+
+.btn-product-css {
+    height: 34px !important;
+}
+
+.product-body {
+    text-align: center;
+}
+
+.product-info {
+    font-size: 20px;
+    font-weight: 600;
+}

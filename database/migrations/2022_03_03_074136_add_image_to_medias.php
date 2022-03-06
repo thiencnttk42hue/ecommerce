@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPhoneAddressToOrders extends Migration
+class AddImageToMedias extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class AddPhoneAddressToOrders extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
-
-            $table->string('phone', 100);
-            $table->string('address', 100);
+        Schema::table('medias', function (Blueprint $table) {
+            $table->string('image')->default('');
         });
     }
 
@@ -27,8 +25,8 @@ class AddPhoneAddressToOrders extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->dropColumn('phone', 'address');
+        Schema::table('medias', function (Blueprint $table) {
+            $table->dropColumn('image');
         });
     }
 }

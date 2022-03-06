@@ -1,11 +1,6 @@
 @extends('admin.master')
 @section('title', 'Danh sách sản phẩm')
 @section('content')
-<style>
-    .form-delete{
-        margin: 0;
-    }
-</style>
 <div class="card-body">
 <h4 class="card-title">DANH SÁCH SẢN PHẨM</h4>
     @if (session('message'))
@@ -13,11 +8,11 @@
             {{ session('message') }}
         </div>
     @endif
-    <a class="btn btn-primary" style = "margin-bottom:10px;" href="{{ route('admin.products.create') }}">Thêm</a>
-    <table class="table table-bordered">
+    <a class="btn btn-primary" style = "margin-bottom:10px;" href="{{ route('admin.products.create') }}">Add</a>
+    <table class="table table-hover table-bordered-css">
         <thead>
             <tr>
-                <th>Số thứ tự</th>
+                <th>Ảnh sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Giá</th>
                 <th>Số lượt xem</th>
@@ -30,8 +25,8 @@
         </thead>
         <tbody>
         @foreach($products as $product)
-            <tr>
-                <th scope="row">{{ $product->id }}</th>
+            <tr class="table-info table-border">
+                <td scope="row"><img src="{{ $product->medias->first() == null ? : 'http://localhost:8000/public/' . $product->medias->first()->image }}" alt=""></td>
                 <td><a href="{{ route('admin.products.show', $product->id) }}"> {{ $product->name }} </a></td>
                 <td>{{number_format($product->price, 2) }}Đ</td>
                 <td>{{ $product->view }}</td>
@@ -43,12 +38,15 @@
                     <form class="form-delete" action="{{ route('admin.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Bạn có muốn xóa sản phẩm này không?')">
                         {{ csrf_field() }}
                         {{ method_field('delete') }}
-                        <button class="btn btn-primary" type="submit">Delete</button>
+                        <button class="btn btn-danger" type="submit">Delete</button>
                     </form>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
+    <div class="navigation-page">
+        {{ $products->links() }}
+    </div>
 </div>
 @stop()

@@ -19,8 +19,8 @@ class OrderFactory extends Factory
             'desc'=>$this->faker->catchPhrase(),
             'status'=>1,
             'customer_id'=>1,
-            'phone'=>$this->faker->e164PhoneNumber(),
-            'address'=>$this->faker->streetName(),
+            'phone'=>$this->faker->tollFreePhoneNumber(),
+            'address'=>$this->faker->company(),
         ];
     }
 }
